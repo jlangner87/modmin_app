@@ -9,8 +9,16 @@ function Form() {
     last_name: '',
     email: '',
     county: '',
-    availability: '',
-    conflict: '',
+    rule_1: '',
+    rule_2: '',
+    rule_3: '',
+    rule_4: '',
+    rule_5: '',
+    rule_6: '',
+    rule_7: '',
+    rule_8: '',
+    why: '',
+    skills: '',
   }
 
   const [formState, setFormState] = useState(initialState)
@@ -19,7 +27,7 @@ function Form() {
     event.preventDefault()
     setFormState({ ...formState, [event.target.id]: event.target.value })
     if (event.target.value === '') {
-      setFormState({ ...formState, [event.target.id]: 0 })
+      setFormState({ ...formState, [event.target.id]: '' })
     }
   }
 
@@ -28,14 +36,14 @@ function Form() {
     emailjs
       .send(
         'service_sputs35',
-        'template_x2tmj8c',
+        'template_nc5obhw',
         formState,
         '-g6CgSoAgcOI1wfb6'
       )
       .then(
         function (response) {
           alert(
-            `Thank you for reaching out, ${formState.business_name}! Someone will respond shortly!`
+            `Thank you for your application, ${formState.first_name}! Someone will respond shortly!`
           )
         },
         function (error) {
@@ -46,30 +54,31 @@ function Form() {
   }
 
   return (
-    <div className="contact_card">
       <div className='contact_form'>
       <div id="contact-form">
       <form onSubmit={handleMessage} method="post" action="/">
-        <div className='row'>
+<div className='row'>
         <div>
           <label for="first_name">
             <span class="required" id='name_span'>First Name:</span> 
             <input onChange={handleChange} type="text" id="first_name" name="first_name" value={formState.first_name} placeholder="First Name" required="required" tabindex="1" />
           </label> 
       </div>
+
       <div>
           <label for="last_name">
             <span class="required" id='name_span'>Last Name:</span> 
             <input onChange={handleChange} type="text" id="last_name" name="last_name" value={formState.last_name} placeholder="Last Name" required="required" tabindex="2" />
           </label> 
       </div>
+
       <div>
           <label for="email">
             <span class="required">email:</span> 
             <input onChange={handleChange} type="text" id="email" name="business_name" value={formState.email} placeholder="Email Address" required="required" tabindex="3" />
           </label> 
       </div>
-        </div>
+      </div>
       <div>             
           <label for="county">
           <span class="required">Which Northwest Iowa County do you live in?</span><br/>
@@ -171,7 +180,7 @@ function Form() {
             <p>"Please keep personal or business promotion out of this group. When a spam/sales post is made in the group, it will be deleted. Admin will assume the account is fake & remove it from the group."</p>
             <p>"There will occasionally be "promo threads" where specific things can be advertised/promoted within the comments section."</p>          
           </div>
-            <select onChange={handleChange} id="county" name="county" tabindex="10">  
+            <select onChange={handleChange} id="rule_6" name="rule_6" tabindex="10">  
               <option value="None selected">Select One</option>     
               <option value="YES">Yes</option> 
               <option value="NO">No</option>
@@ -200,7 +209,7 @@ There are 21,000+ people in this group. If your post or comment was deleted, the
             <p>"Once a post becomes irrelevant, it will be removed to keep the group free of clutter.  If your post (location, subject) has already recently been posted by another member, it will be removed."</p>
             <p>"When a post is removed, all comments under the post are removed. THIS IS NOTHING PERSONAL and NO ACTUAL RULE VIOLATION HAPPENED."</p>          
           </div>
-            <select onChange={handleChange} id="county" name="county" tabindex="12">  
+            <select onChange={handleChange} id="rule_8" name="rule_8" tabindex="12">  
               <option value="None selected">Select One</option>     
               <option value="YES">Yes</option> 
               <option value="NO">No</option>
@@ -210,15 +219,15 @@ There are 21,000+ people in this group. If your post or comment was deleted, the
     
       </div>
       <div className='questions'>             
-          <label for="message">
+          <label for="why">
             <span class="required">Briefly describe why you want to be a moderator:</span> 
-            <textarea onChange={handleChange} id="message" name="message" placeholder="Please write your message here." tabindex="5" required="required" value={formState.message}></textarea> 
+            <textarea onChange={handleChange} id="why" name="why" placeholder="Write your answer here." tabindex="13" required="required" value={formState.why}></textarea> 
           </label>  
       </div>
       <div>             
-          <label for="message">
+          <label for="skills">
             <span class="required">Do you have any skills or experience that would be an asset to the group?</span> 
-            <textarea onChange={handleChange} id="message" name="message" placeholder="Please write your message here." tabindex="5" required="required" value={formState.message}></textarea> 
+            <textarea onChange={handleChange} id="skills" name="skills" placeholder="Write your answer here." tabindex="14" value={formState.skills}></textarea> 
           </label>  
       </div>
       <div>              
@@ -227,7 +236,6 @@ There are 21,000+ people in this group. If your post or comment was deleted, the
       </form>
   </div> 
       </div>
-    </div>
   )
 }
 
