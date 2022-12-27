@@ -4,9 +4,78 @@
 
 body {
   background-color: #FCCF33;
-  color: white;
+  color: #e8e6e2
 }
 
 h1 {
   color: #1F2424;
+}
+
+.overview {
+  width: 75%;
+  background-color: rgb(236, 235, 235);
+  border: 1px solid #1F2424;
+  border-radius: 12px;
+  padding-bottom: 35px;
+  padding-top: 5px;
+  margin-top: 30px;
+}
+
+.overview div {
+  margin-bottom: 30px;
+}
+
+.overview_title {
+  text-align: center;
+  color: #1F2424;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  font-size: 36px;
+  font-family: 'Rubik 80s Fade', cursive;
+}
+
+.overview_text {
+  text-align: left;
+  font-size: 18px;
+  color: #1F2424;
+  width: 85%;
+  line-height: 150%;
+}
+
+ul {
+  margin-bottom: 10px;
+}
+
+li {
+  text-align: left;
+  font-size: 18px;
+  color: #1F2424;
+  width: 75%;
+  list-style: none;
+}
+
+#list_title {
+  font-style: italic;
+  font-weight: 700;
+  list-style: none;
+}
+
+#spaced_line {
+  margin-top: 30px;
+}
+
+.link_button {
+  margin: 100px auto;
+  text-align: center;
+
+}
+
+.link_button a {
+  background-color: #1F2424;
+  padding: 25px;
+  color: #FCCF33;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 24px;
+  border-radius: 16px;
 }

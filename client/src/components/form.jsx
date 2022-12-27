@@ -2,6 +2,7 @@
 import emailjs from '@emailjs/browser'
 import { useState } from 'react'
 import '../components/form-style.css'
+import { NavLink } from 'react-router-dom'
 
 function Form() {
   const initialState = {
@@ -55,6 +56,7 @@ function Form() {
 
   return (
       <div className='contact_form'>
+              <h3 className="overview_title">Moderator Role Application</h3>
       <div id="contact-form">
       <form onSubmit={handleMessage} method="post" action="/">
 <div className='row'>
@@ -235,6 +237,7 @@ There are 21,000+ people in this group. If your post or comment was deleted, the
       </div>
       </form>
   </div> 
+  <div className="link_button"><NavLink to={'/'}>BACK</NavLink></div>
       </div>
   )
 }
